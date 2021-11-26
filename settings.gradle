@@ -9,5 +9,5 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io'}
     }
 }
-rootProject.name = "Clever"
+rootProject.name = "Clever2"
 include ':app'

@@ -42,7 +42,7 @@ public class SignupActivity extends AppCompatActivity {
         binding.createNewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email, pass, name, referCode;
+                String email, pass, name;
 
                 email = binding.emailBox.getText().toString();
                 pass = binding.passwordBox.getText().toString();
@@ -55,7 +55,7 @@ public class SignupActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            String uid = task.getResult().getUser().getUid();
+                            String uid = FirebaseAuth.getInstance().getUid();
 
                             database
                                     .collection("users")

@@ -1,7 +1,8 @@
 package com.example.clever;
 
 public class User {
-    private String name, email, pass,profile;
+    private String name, email, pass, profile;
+    private long coins = 0;
 
     public User() {
     }
@@ -43,5 +44,14 @@ public class User {
 
     public void setProfile(String profile) {
         this.profile = profile;
+    }
+
+    public void setCoins(long coins) {
+        this.coins = coins;
+    }
+
+    public long getCoins() {
+
+        return coins;
     }
 }

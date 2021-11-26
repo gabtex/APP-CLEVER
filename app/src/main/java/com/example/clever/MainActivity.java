@@ -21,7 +21,7 @@ import me.ibrahimsn.lib.OnItemSelectedListener;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-    private FirebaseAuth auth;
+    FirebaseAuth auth;
 
 
     @Override
@@ -38,9 +38,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 auth.signOut();
 
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+
             }
         });
 
@@ -84,11 +83,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.wallet) {
-            Toast.makeText(this, "wallet is clicked.", Toast.LENGTH_SHORT).show();
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 }
